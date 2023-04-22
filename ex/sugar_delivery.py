@@ -12,17 +12,16 @@
 
 n = int(input())
 min_num = 5000
-a = n//5
-b =n%5
-c = 0
-if n%5 == 0:
-    print(n)
-while True:
-    if b % 3 == 0:
-        c = b//3
-        b = b%3
+cnt_3 = 0
 
+while(n>=0):
+    if n%5 == 0:
+        min_num = cnt_3 + n/5
         break
-    b = b + 5
-    a = a-1
-print((b == 0)and(a+c) or -1)
+    else:
+        cnt_3 = cnt_3+1
+        n = n-3
+if min_num == 5000:
+    print(-1)
+else:
+    print(min_num)
